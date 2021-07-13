@@ -1,0 +1,359 @@
+CrayPat/X:  Version 7.1.3 Revision 09f1a4886  11/29/19 13:50:15
+
+Number of PEs (MPI ranks):    4
+                           
+Numbers of PEs per Node:      4
+                           
+Numbers of Threads per PE:    1
+                           
+Number of Cores per Socket:  16
+
+Execution start time:  Mon Jul 12 12:27:35 2021
+
+System name and speed:  nid00398  2.301 GHz (nominal)
+
+Intel Haswell CPU  Family:  6  Model: 63  Stepping:  2
+
+DRAM: 128 GiB DDR4-2133 on 2.3 GHz nodes
+
+
+Current path to data file:
+  /project/k1288/timing_transfer/a.out+pat+30576-398s   (RTS)
+
+
+Notes for table 1:
+
+  This table shows functions that have significant exclusive sample
+    hits, averaged across ranks.
+  For further explanation, see the "General table notes" below,
+    or use:  pat_report -v -O samp_profile ...
+
+Table 1:  Profile by Function
+
+  Samp% | Samp | Imb. |   Imb. | Group
+        |      | Samp |  Samp% |  Function
+        |      |      |        |   PE=HIDE
+       
+ 100.0% | 38.2 |   -- |     -- | Total
+|-------------------------------------------------------
+|  54.2% | 20.8 |   -- |     -- | MPI
+||------------------------------------------------------
+||  26.8% | 10.2 | 13.8 |  76.4% | MPIDI_CH3I_Progress
+||  13.7% |  5.2 |  8.8 |  83.3% | MPID_Segment_manipulate
+||   7.8% |  3.0 |  3.0 |  66.7% | MPID_Segment_contig_m2m
+||   3.3% |  1.2 |  1.8 |  77.8% | MPID_nem_network_poll
+||   1.3% |  0.5 |  0.5 |  66.7% | MPIDU_Sched_are_pending
+||   1.3% |  0.5 |  0.5 |  66.7% | MPID_nem_gni_poll_no_op
+||======================================================
+|  35.9% | 13.8 |   -- |     -- | ETC
+||------------------------------------------------------
+||  27.5% | 10.5 | 10.5 |  66.7% | _cray_mpi_memcpy_snb
+||   3.9% |  1.5 |  1.5 |  66.7% | poll_active_fboxes
+||   3.3% |  1.2 |  3.8 | 100.0% | ==LO_MEMORY== a.out+pat
+||   1.3% |  0.5 |  0.5 |  66.7% | _init
+||======================================================
+|   7.2% |  2.8 |  2.2 |  60.0% | RT
+||------------------------------------------------------
+||   7.2% |  2.8 |  2.2 |  60.0% | munmap
+||======================================================
+|   2.6% |  1.0 |  0.0 |   0.0% | USER
+||------------------------------------------------------
+||   2.6% |  1.0 |  0.0 |   0.0% | MAIN__
+|=======================================================
+
+Notes for table 2:
+
+  This table shows functions that have the most significant exclusive
+    time, taking the maximum time across ranks and threads.
+  For further explanation, see the "General table notes" below,
+    or use:  pat_report -v -O profile_max ...
+
+Table 2:  Profile of maximum function times
+
+  Samp% | Samp | Imb. |   Imb. | Function
+        |      | Samp |  Samp% |  PE
+|-------------------------------------------------------
+| 100.0% | 24.0 | 13.8 |  76.4% | MPIDI_CH3I_Progress
+||------------------------------------------------------
+|| 100.0% | 24.0 |   -- |     -- | pe.0
+||  70.8% | 17.0 |   -- |     -- | pe.1
+||   0.0% |  0.0 |   -- |     -- | pe.2
+||   0.0% |  0.0 |   -- |     -- | pe.3
+||======================================================
+|  87.5% | 21.0 | 10.5 |  66.7% | _cray_mpi_memcpy_snb
+||------------------------------------------------------
+||  87.5% | 21.0 |   -- |     -- | pe.0
+||  87.5% | 21.0 |   -- |     -- | pe.1
+||   0.0% |  0.0 |   -- |     -- | pe.2
+||   0.0% |  0.0 |   -- |     -- | pe.3
+||======================================================
+|  58.3% | 14.0 |  8.8 |  83.3% | MPID_Segment_manipulate
+||------------------------------------------------------
+||  58.3% | 14.0 |   -- |     -- | pe.1
+||  29.2% |  7.0 |   -- |     -- | pe.0
+||   0.0% |  0.0 |   -- |     -- | pe.2
+||   0.0% |  0.0 |   -- |     -- | pe.3
+||======================================================
+|  25.0% |  6.0 |  3.0 |  66.7% | MPID_Segment_contig_m2m
+||------------------------------------------------------
+||  25.0% |  6.0 |   -- |     -- | pe.0
+||  25.0% |  6.0 |   -- |     -- | pe.1
+||   0.0% |  0.0 |   -- |     -- | pe.2
+||   0.0% |  0.0 |   -- |     -- | pe.3
+||======================================================
+|  20.8% |  5.0 |  3.8 | 100.0% | ==LO_MEMORY== a.out+pat
+||------------------------------------------------------
+||  20.8% |  5.0 |   -- |     -- | pe.1
+||   0.0% |  0.0 |   -- |     -- | pe.0
+||   0.0% |  0.0 |   -- |     -- | pe.2
+||   0.0% |  0.0 |   -- |     -- | pe.3
+||======================================================
+|  20.8% |  5.0 |  2.2 |  60.0% | munmap
+||------------------------------------------------------
+||  20.8% |  5.0 |   -- |     -- | pe.0
+||  16.7% |  4.0 |   -- |     -- | pe.1
+||   4.2% |  1.0 |   -- |     -- | pe.2
+||   4.2% |  1.0 |   -- |     -- | pe.3
+||======================================================
+|  12.5% |  3.0 |  1.5 |  66.7% | poll_active_fboxes
+||------------------------------------------------------
+||  12.5% |  3.0 |   -- |     -- | pe.0
+||  12.5% |  3.0 |   -- |     -- | pe.1
+||   0.0% |  0.0 |   -- |     -- | pe.2
+||   0.0% |  0.0 |   -- |     -- | pe.3
+||======================================================
+|  12.5% |  3.0 |  1.8 |  77.8% | MPID_nem_network_poll
+||------------------------------------------------------
+||  12.5% |  3.0 |   -- |     -- | pe.1
+||   8.3% |  2.0 |   -- |     -- | pe.0
+||   0.0% |  0.0 |   -- |     -- | pe.2
+||   0.0% |  0.0 |   -- |     -- | pe.3
+||======================================================
+|   4.2% |  1.0 |  0.0 |   0.0% | MAIN__
+||------------------------------------------------------
+||   4.2% |  1.0 |   -- |     -- | pe.0
+||   4.2% |  1.0 |   -- |     -- | pe.1
+||   4.2% |  1.0 |   -- |     -- | pe.2
+||   4.2% |  1.0 |   -- |     -- | pe.3
+||======================================================
+|   4.2% |  1.0 |  0.5 |  66.7% | _init
+||------------------------------------------------------
+||   4.2% |  1.0 |   -- |     -- | pe.0
+||   4.2% |  1.0 |   -- |     -- | pe.1
+||   0.0% |  0.0 |   -- |     -- | pe.2
+||   0.0% |  0.0 |   -- |     -- | pe.3
+||======================================================
+|   4.2% |  1.0 |  0.5 |  66.7% | MPIDU_Sched_are_pending
+||------------------------------------------------------
+||   4.2% |  1.0 |   -- |     -- | pe.0
+||   4.2% |  1.0 |   -- |     -- | pe.1
+||   0.0% |  0.0 |   -- |     -- | pe.2
+||   0.0% |  0.0 |   -- |     -- | pe.3
+||======================================================
+|   4.2% |  1.0 |  0.5 |  66.7% | MPID_nem_gni_poll_no_op
+||------------------------------------------------------
+||   4.2% |  1.0 |   -- |     -- | pe.0
+||   4.2% |  1.0 |   -- |     -- | pe.1
+||   0.0% |  0.0 |   -- |     -- | pe.2
+||   0.0% |  0.0 |   -- |     -- | pe.3
+|=======================================================
+
+Notes for table 3:
+
+  This table shows functions, and line numbers within functions, that
+    have significant exclusive sample hits, averaged across ranks.
+  For further explanation, see the "General table notes" below,
+    or use:  pat_report -v -O samp_profile+src ...
+
+Table 3:  Profile by Group, Function, and Line
+
+  Samp% | Samp | Imb. |   Imb. | Group
+        |      | Samp |  Samp% |  Function
+        |      |      |        |   Source
+        |      |      |        |    Line
+        |      |      |        |     PE=HIDE
+       
+ 100.0% | 38.2 |   -- |     -- | Total
+|----------------------------------------------------------------------
+|  54.2% | 20.8 |   -- |     -- | MPI
+||---------------------------------------------------------------------
+||  26.8% | 10.2 | 13.8 |  76.4% | MPIDI_CH3I_Progress
+||  13.7% |  5.2 |  8.8 |  83.3% | MPID_Segment_manipulate
+||   7.8% |  3.0 |  3.0 |  66.7% | MPID_Segment_contig_m2m
+||   3.3% |  1.2 |  1.8 |  77.8% | MPID_nem_network_poll
+||   1.3% |  0.5 |  0.5 |  66.7% | MPIDU_Sched_are_pending
+||   1.3% |  0.5 |  0.5 |  66.7% | MPID_nem_gni_poll_no_op
+||=====================================================================
+|  35.9% | 13.8 |   -- |     -- | ETC
+||---------------------------------------------------------------------
+||  27.5% | 10.5 | 10.5 |  66.7% | _cray_mpi_memcpy_snb
+||   3.9% |  1.5 |  1.5 |  66.7% | poll_active_fboxes
+||   3.3% |  1.2 |  3.8 | 100.0% | ==LO_MEMORY== a.out+pat
+||   1.3% |  0.5 |  0.5 |  66.7% | _init
+||=====================================================================
+|   7.2% |  2.8 |  2.2 |  60.0% | RT
+||---------------------------------------------------------------------
+||   7.2% |  2.8 |  2.2 |  60.0% | munmap
+||=====================================================================
+|   2.6% |  1.0 |   -- |     -- | USER
+||---------------------------------------------------------------------
+||   2.6% |  1.0 |   -- |     -- | MAIN__
+3|        |      |      |        |  project/k1288/timing_transfer/main.f90
+||||-------------------------------------------------------------------
+4|||   1.3% |  0.5 |  0.5 |  66.7% | line.23
+4|||   1.3% |  0.5 |  0.5 |  66.7% | line.24
+|======================================================================
+
+Notes for table 4:
+
+  This table shows energy and power usage for the nodes with the
+    maximum, mean, and minimum usage, as well as the sum of usage over
+    all nodes.
+    Energy and power for accelerators is also shown, if applicable.
+  For further explanation, see the "General table notes" below,
+    or use:  pat_report -v -O program_energy ...
+
+Table 4:  Program energy and power usage (from Cray PM)
+
+   Node |     Node |  Process | PE=HIDE
+ Energy |    Power |     Time | 
+    (J) |      (W) |          | 
+---------------------------------------
+  40.50 |  100.796 | 0.401800 | Total
+=======================================
+
+Notes for table 5:
+
+  This table shows values shown for HiMem calculated from information
+    in the /proc/self/numa_maps files captured near the end of the
+    program. It is the total size of all pages, including huge pages,
+    that were actually mapped into physical memory from both private
+    and shared memory segments.
+  For further explanation, see the "General table notes" below,
+    or use:  pat_report -v -O himem ...
+
+Table 5:  Memory High Water Mark by Numa Node
+
+   Process |     HiMem |     HiMem | Numanode
+     HiMem | Numa Node | Numa Node |  PE=HIDE
+ (MiBytes) |         0 |         1 | 
+           | (MiBytes) | (MiBytes) | 
+|----------------------------------------------
+|      16.4 |       3.3 |      13.1 | numanode.0
+|      16.2 |       0.4 |      15.7 | numanode.1
+|==============================================
+
+Notes for table 6:
+
+  This table shows total wall clock time for the ranks with the
+    maximum, mean, and minimum time, as well as the average across
+    ranks.
+    It also shows maximum memory usage from /proc/self/numa_maps for
+    those ranks, and on average.  The usage is total size of all
+    pages, including huge pages, that were actually mapped into
+    physical memory from both private and shared memory segments.
+  For further explanation, see the "General table notes" below,
+    or use:  pat_report -v -O program_time ...
+
+Table 6:  Wall Clock Time, Memory High Water Mark
+
+  Process |   Process | PE
+     Time |     HiMem | 
+          | (MiBytes) | 
+         
+ 0.401800 |      16.2 | Total
+|----------------------------
+| 0.754511 |      17.1 | pe.0
+| 0.752006 |      16.4 | pe.1
+| 0.050347 |      15.7 | pe.2
+| 0.050335 |      15.7 | pe.3
+|============================
+
+========================  Additional details  ========================
+
+
+
+General table notes:
+
+    The default notes for a table are based on the default definition of
+    the table, and do not account for the effects of command-line options
+    that may modify the content of the table.
+    
+    Detailed notes, produced by the pat_report -v option, do account for
+    all command-line options, and also show how data is aggregated, and
+    if the table content is limited by thresholds, rank selections, etc.
+    
+    An imbalance metric in a line is based on values in main threads
+    across multiple ranks, or on values across all threads, as applicable.
+    
+    An imbalance percent in a line is relative to the maximum value
+    for that line across ranks or threads, as applicable.
+    
+Experiment:  samp_pc_time
+
+Sampling interval:  10000 microsecs
+
+Original path to data file:
+  /lustre/project/k1288/timing_transfer/a.out+pat+30576-398s/xf-files   (RTS)
+
+Original program:  /lustre/project/k1288/timing_transfer/a.out
+
+Instrumented with:  pat_build -S a.out
+
+Instrumented program:  /lustre/project/k1288/timing_transfer/a.out+pat
+
+Program invocation:  a.out+pat
+
+Exit Status:  0 for 4 PEs
+
+Memory pagesize:  4 KiB
+
+Memory hugepagesize:  Not Available
+
+Programming environment:  INTEL
+
+Runtime environment variables:
+  ATP_VERSION=3.6.4
+  CRAYPAT_ALPS_COMPONENT=/opt/cray/pe/perftools/7.1.3/sbin/pat_alps
+  CRAYPAT_COMPILER_OPTIONS=1
+  CRAYPAT_LD_LIBRARY_PATH=/opt/cray/pe/gcc-libs:/opt/cray/gcc-libs:/opt/cray/pe/perftools/7.1.3/lib64
+  CRAYPAT_OPTS_EXECUTABLE=libexec64/opts
+  CRAYPAT_ROOT=/opt/cray/pe/perftools/7.1.3
+  CRAYPE_VERSION=2.6.3
+  CRAY_CRAYPE_VERSION=2.6.3
+  CRAY_LIBSCI_VERSION=19.06.1
+  CRAY_MPICH_VERSION=7.7.11
+  CRAY_PERFTOOLS_VERSION=7.1.3
+  CRAY_PMI_VERSION=5.0.15
+  INTEL_MAJOR_VERSION=19.0
+  INTEL_MINOR_VERSION=5.281
+  INTEL_VERSION=19.0.5.281
+  LIBSCI_VERSION=19.06.1
+  MODULE_VERSION=3.2.11.4
+  MODULE_VERSION_STACK=3.2.11.4
+  MPICH_ABORT_ON_ERROR=1
+  MPICH_DIR=/opt/cray/pe/mpt/7.7.11/gni/mpich-intel/16.0
+  PAT_BUILD_PAPI_LIBDIR=/opt/cray/pe/papi/5.7.0.2/lib64
+  PAT_REPORT_PRUNE_NAME=_cray$mt_execute_,_cray$mt_start_,__cray_hwpc_,f_cray_hwpc_,cstart,__pat_,pat_region_,PAT_,OMP.slave_loop,slave_entry,_new_slave_entry,_thread_pool_slave_entry,THREAD_POOL_join,__libc_start_main,_start,__start,start_thread,__wrap_,UPC_ADIO_,_upc_,upc_,__caf_,__pgas_,syscall,__device_stub,__cray_acc_hw
+  PERFTOOLS_VERSION=7.1.3
+  PMI_CONTROL_PORT=25123
+  PMI_CRAY_NO_SMP_ORDER=0
+  PMI_GNI_COOKIE=2675572736:2675638272
+  PMI_GNI_DEV_ID=0:0
+  PMI_GNI_LOC_ADDR=526:526
+  PMI_GNI_PTAG=152:153
+  PMI_NO_FORK=1
+
+Report time environment variables:
+    CRAYPAT_ROOT=/opt/cray/pe/perftools/7.1.3
+    PAT_REPORT_PRUNE_NAME=_cray$mt_execute_,_cray$mt_start_,__cray_hwpc_,f_cray_hwpc_,cstart,__pat_,pat_region_,PAT_,OMP.slave_loop,slave_entry,_new_slave_entry,_thread_pool_slave_entry,THREAD_POOL_join,__libc_start_main,_start,__start,start_thread,__wrap_,UPC_ADIO_,_upc_,upc_,__caf_,__pgas_,syscall,__device_stub,__cray_acc_hw
+
+Number of MPI control variables collected:  108
+
+  (To see the list, specify: -s mpi_cvar=show)
+
+Report command line options:  -o myreport.txt
+
+Operating system:
+  Linux 4.12.14-150.17_5.0.93-cray_ari_c #1 SMP Fri Feb 12 21:54:42 UTC 2021 (4c8bf4a)
+
